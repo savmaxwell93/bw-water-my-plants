@@ -1,0 +1,42 @@
+{
+  "name": "bw-water-my-plants",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "reset": "npm run rollback && npm run migrate && npm run seed",
+    "cleanup": "knex seen:run --specific=01-cleanup.js",
+    "seed": "knex seed:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savmaxwell93/bw-water-my-plants.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savmaxwell93/bw-water-my-plants/issues"
+  },
+  "homepage": "https://github.com/savmaxwell93/bw-water-my-plants#readme",
+  "dependencies": {
+    "@vscode/sqlite3": "5.0.7",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^1.0.5"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^8.13.0",
+    "knex-cleaner": "^1.3.1",
+    "nodemon": "^2.0.15"
+  }
+}
